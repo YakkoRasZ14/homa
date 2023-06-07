@@ -25,7 +25,7 @@ exit 0
 fi
 clear
 apt install jq curl -y
-DOMAIN=
+DOMAIN=yokkoeddystore.com
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 SUB_DOMAIN=${sub}.
 CF_ID=yakkorasz74@gmail.com
