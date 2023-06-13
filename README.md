@@ -5,7 +5,7 @@
 
   ```
 
-### Update & upgrade First your VPS for Ubuntu 18.04 & 20.04
+### Update & upgrade First your VPS for Ubuntu 18.04
 
   ```html
   apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && sleep 2 && reboot
