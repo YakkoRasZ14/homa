@@ -78,9 +78,10 @@ case $Restart in
 				systemctl restart xray@vmessnone
 				systemctl restart xray@trojan
 				systemctl restart xray@trojannone
-				systemctl restart ws-http
-				systemctl restart ws-https
-                                systemctl restart ws-ovpn
+				systemctl restart cdn-dropbear.service
+				systemctl restart cdn-ssl.service
+                                systemctl restart cdn-ovpn.service
+				systemctl restart cdn-openssh.service
 				systemctl restart ohp
 				systemctl restart ohpd
 				systemctl restart ohps
@@ -248,9 +249,10 @@ case $Restart in
 				;;
 				12)
 				clear
-				systemctl restart ws-http
-				systemctl restart ws-https
-                 systemctl restart ws-ovpn
+				systemctl restart cdn-dropbear.service
+				systemctl restart cdn-openssh.service
+                                systemctl restart cdn-ssl.service
+                 systemctl restart cdn-ovpn.service
 				
                 echo -e ""
                 echo -e "======================================"
