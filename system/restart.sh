@@ -80,12 +80,10 @@ case $Restart in
 				systemctl restart xray@trojannone
 				systemctl restart ws-http
 				systemctl restart ws-https
+                                systemctl restart ws-ovpn
 				systemctl restart ohp
 				systemctl restart ohpd
 				systemctl restart ohps
-			    systemctl restart cdn-dropbear
-				systemctl restart cdn-ovpn
-				systemctl restart cdn-ssl
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 1000
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 1000
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000
@@ -252,7 +250,7 @@ case $Restart in
 				clear
 				systemctl restart ws-http
 				systemctl restart ws-https
-                systemctl restart ws-ovpn
+                 systemctl restart ws-ovpn
 				
                 echo -e ""
                 echo -e "======================================"
