@@ -252,9 +252,8 @@ case $Restart in
 				clear
 				systemctl restart ws-http
 				systemctl restart ws-https
-                systemctl restart cdn-dropbear
-				systemctl restart cdn-ovpn
-				systemctl restart cdn-ssl
+                systemctl restart ws-ovpn
+				
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
