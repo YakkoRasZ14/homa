@@ -211,6 +211,15 @@ else
 echo -e " Stunnel(SSL)            : "$red"not running (Error)"$NC" "
 fi
 
+status="$(systemctl show cdn-dropbear.service --no-page)"
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e " DropBear-Ws             : "$green"running"$NC" ✓"
+else
+echo -e " DropBear-Ws             : "$red"not running (Error)"$NC" "
+fi
+
 status="$(systemctl show dropbear.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
@@ -220,7 +229,7 @@ else
 echo -e " DropBear                : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show ws-http.service --no-page)"
+status="$(systemctl show cdn-http.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -229,7 +238,7 @@ else
 echo -e " Websocket SSH(HTTP)     : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show ws-https.service --no-page)"
+status="$(systemctl show cdn-ssl.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
@@ -238,7 +247,7 @@ else
 echo -e " Websocket SSL(HTTPS)    : "$red"not running (Error)"$NC" "
 fi
 
-status="$(systemctl show ws-ovpn.service --no-page)"
+status="$(systemctl show cdn-ovpn.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
