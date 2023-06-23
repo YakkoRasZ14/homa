@@ -114,6 +114,7 @@ wget -O autobackup "https://raw.githubusercontent.com/${GitUser}/homa/main/syste
 wget -O backup "https://raw.githubusercontent.com/${GitUser}/homa/main/system/backup.sh"
 wget -O bckp "https://raw.githubusercontent.com/${GitUser}/homa/main/system/bckp.sh"
 wget -O restore "https://raw.githubusercontent.com/${GitUser}/homa/main/system/restore.sh"
+clear
 chmod +x update
 chmod +x run-update
 chmod +x message-ssh
@@ -132,6 +133,11 @@ chmod +x autobackup
 chmod +x backup
 chmod +x bckp
 chmod +x restore
+#install websocket
+echo -e "\e[0;32mINSTALLING WEBSOCKET PORT...\e[0m"
+wget https://raw.githubusercontent.com/${GitUser}/homa/main/websocket-python/websocket.sh && chmod +x websocket.sh && screen -S websocket.sh ./websocket.sh
+echo -e "\e[0;32mDONE INSTALLING WEBSOCKET PORT\e[0m"
+rm -f /root/websocket.sh
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
